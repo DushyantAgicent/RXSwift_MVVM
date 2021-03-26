@@ -1,24 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="RxSwiftMVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="STM-c7-zs4">
+                                <rect key="frame" x="72" y="317.5" width="270" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Akf-jr-7lm">
+                                <rect key="frame" x="107" y="433" width="200" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.33634786651268245" blue="0.52336007079374147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bio-tR-qIX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDP-bZ-Cqe">
+                                <rect key="frame" x="165.5" y="134.5" width="83" height="38.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ScQ-1H-kan">
+                                <rect key="frame" x="72" y="240.5" width="270" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="STM-c7-zs4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="330:896" id="2Si-zW-Me5"/>
+                            <constraint firstItem="Akf-jr-7lm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="450:896" id="F62-K9-TMo"/>
+                            <constraint firstItem="ScQ-1H-kan" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Jis-74-7ld"/>
+                            <constraint firstItem="ScQ-1H-kan" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="40:896" id="M3q-Sy-p9x"/>
+                            <constraint firstItem="STM-c7-zs4" firstAttribute="height" secondItem="ScQ-1H-kan" secondAttribute="height" id="PBI-as-eHG"/>
+                            <constraint firstItem="ScQ-1H-kan" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="270:414" id="Wid-Tq-OvR"/>
+                            <constraint firstItem="MDP-bZ-Cqe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="140:896" id="XjA-Kc-Gf1"/>
+                            <constraint firstItem="STM-c7-zs4" firstAttribute="centerX" secondItem="ScQ-1H-kan" secondAttribute="centerX" id="bPF-V2-0cI"/>
+                            <constraint firstItem="STM-c7-zs4" firstAttribute="width" secondItem="ScQ-1H-kan" secondAttribute="width" id="bum-2c-wvB"/>
+                            <constraint firstItem="Akf-jr-7lm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="40:896" id="e5A-M9-sLc"/>
+                            <constraint firstItem="ScQ-1H-kan" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="250:896" id="g4M-wZ-g2Q"/>
+                            <constraint firstItem="Akf-jr-7lm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="200:414" id="h3K-Go-JaK"/>
+                            <constraint firstItem="MDP-bZ-Cqe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ito-ZH-Xxa"/>
+                            <constraint firstItem="Akf-jr-7lm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yH6-fg-Hey"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="ScQ-1H-kan" id="Uid-Ne-b91"/>
+                        <outlet property="loginButton" destination="Akf-jr-7lm" id="bdz-EJ-aGq"/>
+                        <outlet property="passwordTextField" destination="STM-c7-zs4" id="wjU-X8-B0O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="13.125" y="88.732394366197184"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
